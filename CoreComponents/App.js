@@ -113,7 +113,18 @@ import { View, Text, StyleSheet } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text> StyleSheet API</Text>
+      <View style={styles.darkMode}>
+        <Text style={styles.darkModeText}>
+          Style Inheritance
+          <Text style={styles.boldText}>Inherited white but also in bold</Text>
+        </Text>
+      </View>
+      <View style={[styles.box, styles.lightblueBox, styles.androidShadow]}>
+        <Text>Lightblue Box</Text>
+      </View>
+      <View style={[styles.box, styles.lightgreenBox, styles.boxShadow]}>
+        <Text>Lightgreen Box</Text>
+      </View>
     </View>
   );
 }
@@ -123,5 +134,39 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "cyan",
     padding: 60,
+  },
+  darkMode: {
+    backgroundColor: "#171717",
+    color: "white",
+  },
+  darkModeText: {
+    color: "white",
+  },
+  boldText: {
+    fontWeight: "bold",
+  },
+  box: {
+    width: 250,
+    height: 250,
+    padding: 10,
+  },
+  lightblueBox: {
+    backgroundColor: "lightblue",
+  },
+  lightgreenBox: {
+    backgroundColor: "lightgreen",
+  },
+  boxShadow: {
+    shadowColor: "#333333",
+    shadowOffset: {
+      width: 6,
+      height: 6,
+    },
+    shadowOpacity: 0.6,
+    shadowRadius: 4,
+  },
+  androidShadow: {
+    shadowColor: "#333333",
+    elevation: 10,
   },
 });
