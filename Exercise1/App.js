@@ -1,5 +1,5 @@
 import { StyleSheet, SafeAreaView, Platform, ScrollView } from "react-native";
-import PokemonCard from "./components/PokemonCard";
+import PokemonCard from "./Components/PokemonCard";
 
 export default function App() {
   const charmanderData = {
